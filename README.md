@@ -21,11 +21,14 @@ Open a terminal and `cd` to the folder that contains `docker-compose.yml` and ru
 docker-compose up
 ```
 
-This creates a `src` folder in your directory which contains the following:
-* `themes` - used for theme development
-* `plugins` - used for plugin development
+This creates the following folders `src` in your directory:
+* `db` - stores db exports
+* `logs` - stores server log files
+* `src/themes` - used for theme development
+* `src/plugins` - used for plugin development
 
-Contains should now be built and running.  
+Contains should now be built and running.
+
 Wordpress installation is running on `localhost:80`.  
 phpMyAdmin is running on `localhost:8080`.
 

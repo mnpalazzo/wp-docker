@@ -26,6 +26,7 @@ services:
     restart: always
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./logs:/var/log
       - ./src/themes:/var/www/html/wp-content/themes
       - ./src/plugins:/var/www/html/wp-content/plugins
     environment:
