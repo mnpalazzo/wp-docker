@@ -25,7 +25,7 @@ services:
     image: wordpress
     restart: always
     volumes:
-      - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./config/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
       - ./logs:/var/log
       - ./src/themes:/var/www/html/wp-content/themes
       - ./src/plugins:/var/www/html/wp-content/plugins
@@ -58,6 +58,8 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./config/uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
     networks:
       - wp
 
