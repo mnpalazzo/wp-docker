@@ -62,6 +62,36 @@ The file will export to the `db` folder
 ./export.sh
 ```
 
+### Local Enviornment
+You may need to modify file permissions and/or modify the wp-config.php file.
+
+To change permissions on plugins and uploads run the following.
+
+Get the **wordpress** container ID:
+```
+docker ps
+```
+
+Access docker container filesystem and change permissions:
+```
+docker exec -it <ContainerID> bash
+chmod 0777 wp-content
+chmod 0777 wp-content/plugins
+chmod 0777 wp-content/uploads
+```
+
+To edit the wp-config.php:
+```
+docker exec -it <ContainerID> bash
+apt-get update
+apt-get install vim
+vim wp-config.php
+```
+
+To change plugin FTP access for local add the following to wp-config.php after the line,
+/* That's all, stop editing! Happy publishing. */:
+**define('FS_METHOD', 'direct);**
+
 ### Developing Themes
 The `src/themes` folder is an alias of wordpress's theme directory. Develop any new themes here.
 
