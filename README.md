@@ -89,8 +89,11 @@ vim wp-config.php
 ```
 
 To change plugin FTP access for local add the following to wp-config.php after the line,
-/* That's all, stop editing! Happy publishing. */:
-**define('FS_METHOD', 'direct);**
+
+/* That's all, stop editing! Happy publishing. */
+```
+define('FS_METHOD', 'direct');
+```
 
 ### Developing Themes
 The `src/themes` folder is an alias of wordpress's theme directory. Develop any new themes here.
